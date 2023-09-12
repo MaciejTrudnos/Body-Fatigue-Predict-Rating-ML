@@ -1,0 +1,360 @@
+﻿{
+  "TrainingTime": 60,
+  "Scenario": "Classification",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "D:\\Projekty\\Body-Fatigue-Predict-Rating-ML\\Dataset\\OrthostaticTestRating.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "AverageLyingBPM",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "MaxLyingBPM",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "MinLyingBPM",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "AverageLyingIBI",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "MaxLyingIBI",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "MinLyingIBI",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "AverageStandingBPM",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "MaxStandingBPM",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "MinStandingBPM",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "AverageStandingIBI",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "MaxStandingIBI",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "MinStandingIBI",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "DiffPositionBpm",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "DiffPositionIbi",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      },
+      {
+        "ColumnName": "Rating",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 2
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 1,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaMaximumEntropyMulti",
+        "Score": 0.2,
+        "RuntimeInSeconds": 2.2699999809265137
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.083333333333333329,
+        "RuntimeInSeconds": 1.0829999446868896
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaLogisticRegressionOva",
+        "Score": 0.26666666666666666,
+        "RuntimeInSeconds": 5.8949999809265137
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.2,
+        "RuntimeInSeconds": 1.2380000352859497
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.25,
+        "RuntimeInSeconds": 0.20900000631809235
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "LbfgsLogisticRegressionOva",
+        "Score": 0.25,
+        "RuntimeInSeconds": 0.36100000143051147
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaMaximumEntropyMulti",
+        "Score": 0.5,
+        "RuntimeInSeconds": 4.2890000343322754
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "LightGbmMulti",
+        "Score": 0.2,
+        "RuntimeInSeconds": 0.79799997806549072
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.083333333333333329,
+        "RuntimeInSeconds": 3.0729999542236328
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.55,
+        "RuntimeInSeconds": 0.515999972820282
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaLogisticRegressionOva",
+        "Score": 0.083333333333333329,
+        "RuntimeInSeconds": 16.919000625610352
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.2,
+        "RuntimeInSeconds": 3.5820000171661377
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaMaximumEntropyMulti",
+        "Score": 0.35,
+        "RuntimeInSeconds": 3.6809999942779541
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "LbfgsLogisticRegressionOva",
+        "Score": 0.2,
+        "RuntimeInSeconds": 0.99299997091293335
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.083333333333333329,
+        "RuntimeInSeconds": 3.4200000762939453
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "LightGbmMulti",
+        "Score": 0.2,
+        "RuntimeInSeconds": 0.6380000114440918
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.2,
+        "RuntimeInSeconds": 0.48800000548362732
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.2,
+        "RuntimeInSeconds": 3.8859999179840088
+      }
+    ],
+    "Pipeline": {
+      "parameter": {
+        "0": {
+          "OutputColumnNames": [
+            "AverageLyingBPM",
+            "MaxLyingBPM",
+            "MinLyingBPM",
+            "AverageLyingIBI",
+            "MaxLyingIBI",
+            "MinLyingIBI",
+            "AverageStandingBPM",
+            "MaxStandingBPM",
+            "MinStandingBPM",
+            "AverageStandingIBI",
+            "MaxStandingIBI",
+            "MinStandingIBI",
+            "DiffPositionBpm",
+            "DiffPositionIbi"
+          ],
+          "InputColumnNames": [
+            "AverageLyingBPM",
+            "MaxLyingBPM",
+            "MinLyingBPM",
+            "AverageLyingIBI",
+            "MaxLyingIBI",
+            "MinLyingIBI",
+            "AverageStandingBPM",
+            "MaxStandingBPM",
+            "MinStandingBPM",
+            "AverageStandingIBI",
+            "MaxStandingIBI",
+            "MinStandingIBI",
+            "DiffPositionBpm",
+            "DiffPositionIbi"
+          ]
+        },
+        "1": {
+          "InputColumnNames": [
+            "AverageLyingBPM",
+            "MaxLyingBPM",
+            "MinLyingBPM",
+            "AverageLyingIBI",
+            "MaxLyingIBI",
+            "MinLyingIBI",
+            "AverageStandingBPM",
+            "MaxStandingBPM",
+            "MinStandingBPM",
+            "AverageStandingIBI",
+            "MaxStandingIBI",
+            "MinStandingIBI",
+            "DiffPositionBpm",
+            "DiffPositionIbi"
+          ],
+          "OutputColumnName": "Features"
+        },
+        "2": {
+          "OutputColumnName": "Rating",
+          "InputColumnName": "Rating"
+        },
+        "3": {
+          "OutputColumnNames": [
+            "Features"
+          ],
+          "InputColumnNames": [
+            "Features"
+          ]
+        },
+        "4": {
+          "L1Regularization": 0.04465325,
+          "L2Regularization": 0.255115747,
+          "LabelColumnName": "Rating",
+          "FeatureColumnName": "Features"
+        },
+        "5": {
+          "OutputColumnName": "PredictedLabel",
+          "InputColumnName": "PredictedLabel"
+        }
+      },
+      "estimators": [
+        "ReplaceMissingValues",
+        "Concatenate",
+        "MapValueToKey",
+        "NormalizeMinMax",
+        "LbfgsMaximumEntropyMulti",
+        "MapKeyToValue"
+      ]
+    },
+    "MetricName": "MicroAccuracy"
+  },
+  "Type": "TrainingConfig",
+  "Version": 2
+}

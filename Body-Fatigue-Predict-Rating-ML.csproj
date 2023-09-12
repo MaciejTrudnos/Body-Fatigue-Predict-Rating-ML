@@ -1,14 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Body_Fatigue_Predict_Rating_ML</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.7.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
-
+  <ItemGroup Label="OTRMLModel">
+    <None Include="OTRMLModel.consumption.cs">
+      <DependentUpon>OTRMLModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="OTRMLModel.training.cs">
+      <DependentUpon>OTRMLModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="OTRMLModel.zip">
+      <DependentUpon>OTRMLModel.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

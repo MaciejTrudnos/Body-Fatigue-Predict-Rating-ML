@@ -1,3 +1,5 @@
+using Body_Fatigue_Predict_Rating_ML;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,28 +18,47 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
+app.MapGet("/OrthostaticTestRating/Predict", (
+    float averageLyingBPM,
+    float maxLyingBPM,
+    float minLyingBPM,
+    float averageLyingIBI,
+    float maxLyingIBI,
+    float minLyingIBI,
+    float averageStandingBPM,
+    float maxStandingBPM,
+    float minStandingBPM,
+    float averageStandingIBI,
+    float maxStandingIBI,
+    float minStandingIBI) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    //Load sample data
+    var sampleData = new OTRMLModel.ModelInput()
+    {
+        AverageLyingBPM = averageLyingBPM,
+        MaxLyingBPM = maxLyingBPM,
+        MinLyingBPM = minLyingBPM,
+        AverageLyingIBI = averageLyingIBI,
+        MaxLyingIBI = maxLyingIBI,
+        MinLyingIBI = minLyingIBI,
+        AverageStandingBPM = averageStandingBPM,
+        MaxStandingBPM = maxStandingBPM,
+        MinStandingBPM = minStandingBPM,
+        AverageStandingIBI = averageStandingIBI,
+        MaxStandingIBI = maxStandingIBI,
+        MinStandingIBI = minStandingIBI,
+        DiffPositionBpm = Math.Abs(averageLyingBPM - averageStandingBPM),
+        DiffPositionIbi = Math.Abs(averageLyingIBI - averageStandingIBI),
+    };
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateTime.Now.AddDays(index),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    //Load model and predict output
+    var result = OTRMLModel.Predict(sampleData);
+
+    return new
+    {
+        result.PredictedLabel,
+        result.Score
+    };
+});
 
 app.Run();
-
-internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
